@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primavera Moda Íntima - Elegância Feminina | Rio de Janeiro</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #E91E63; /* Rosa vibrante - feminilidade */
+            --secondary-color: #9C27B0; /* Roxo - sofisticação */
+            --accent-color: #FF9800; /* Laranja - calor, energia */
+            --light-color: #FCE4EC; /* Rosa muito claro */
+            --dark-color: #880E4F; /* Vinho - elegância */
+            --spring-color: #4CAF50; /* Verde - primavera, renovação */
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .bg-primary-custom {
+            background-color: var(--primary-color) !important;
+        }
+        
+        .text-primary-custom {
+            color: var(--primary-color) !important;
+        }
+        
+        .bg-secondary-custom {
+            background-color: var(--secondary-color) !important;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #d81b60;
+            border-color: #d81b60;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(233, 30, 99, 0.2);
+        }
+        
+        .btn-secondary-custom {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: white;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary-custom:hover {
+            background-color: #8e24aa;
+            border-color: #8e24aa;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(156, 39, 176, 0.2);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)), url('https://images.unsplash.com/photo-1591369822096-ffd140ec948f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--dark-color);
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.1) 0%, rgba(156, 39, 176, 0.1) 100%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-card {
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            background-color: white;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(233, 30, 99, 0.1);
+        }
+        
+        .highlight-box {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .highlight-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(233, 30, 99, 0.15);
+            border-color: var(--primary-color);
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 20px;
+            margin-bottom: 50px;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        .section-title.center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .stats-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+        
+        .stats-label {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .stats-box {
+            text-align: center;
+            padding: 25px 15px;
+            background-color: #f9f9f9;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .stats-box:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-5px);
+        }
+        
+        .call-to-action {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .call-to-action:before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -150px;
+            right: -150px;
+        }
+        
+        .call-to-action:after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(76, 175, 80, 0.1);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -100px;
+        }
+        
+        .product-category {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            height: 280px;
+            margin-bottom: 30px;
+        }
+        
+        .product-category img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-category:hover img {
+            transform: scale(1.1);
+        }
+        
+        .product-category .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(136, 14, 79, 0.8));
+            color: white;
+            padding: 25px;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding-top: 60px;
+        }
+        
+        .contact-info li {
+            margin-bottom: 12px;
+        }
+        
+        .contact-info i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .floating-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+        
+        .floating-button:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+        
+        .floating-button.whatsapp {
+            background-color: #25D366;
+        }
+        
+        .floating-button.instagram {
+            background: linear-gradient(45deg, #833AB4, #FD1D1D, #F56040);
+        }
+        
+        .badge-new {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--spring-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            z-index: 10;
+        }
+        
+        .fashion-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(233, 30, 99, 0.1);
+            border-radius: 50%;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent-color);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .collection-banner {
+            background: linear-gradient(rgba(233, 30, 99, 0.9), rgba(156, 39, 176, 0.9)), url('https://images.unsplash.com/photo-1591369822096-ffd140ec948f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            border-radius: 15px;
+            margin: 60px 0;
+        }
+        
+        .spring-flower {
+            position: absolute;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            opacity: 0.6;
+            z-index: 0;
+        }
+        
+        .quality-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .flower-decoration {
+            position: relative;
+            padding: 20px;
+        }
+        
+        .flower-decoration:before {
+            content: '❀';
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            opacity: 0.7;
+        }
+        
+        .flower-decoration:after {
+            content: '❀';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/5521999999999?text=Olá%20Primavera%20Moda%20Íntima!%20Gostaria%20de%20informações%20sobre%20seus%20produtos." target="_blank" class="floating-button whatsapp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+        <a href="https://instagram.com/primaveramodaintima" target="_blank" class="floating-button instagram">
+            <i class="bi bi-instagram"></i>
+        </a>
+    </div>
+
+    <!-- Decoração floral aleatória -->
+    <div class="spring-flower" style="top: 10%; left: 5%;">❀</div>
+    <div class="spring-flower" style="top: 20%; right: 10%;">❀</div>
+    <div class="spring-flower" style="bottom: 15%; left: 15%;">❀</div>
+    <div class="spring-flower" style="bottom: 25%; right: 5%;">❀</div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top py-3 shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-flower1 text-primary-custom me-2"></i>Primavera Moda Íntima
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#inicio">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#produtos">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#colecoes">Coleções</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#diferenciais">Diferenciais</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                </ul>
+                <a href="#colecoes" class="btn btn-primary-custom ms-lg-4 mt-3 mt-lg-0">
+                    <i class="bi bi-bag me-2"></i>Ver Coleção
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section mt-5">
+        <div class="container">
+            <div class="row align-items-center hero-content">
+                <div class="col-lg-7">
+                    <div class="quality-badge">
+                        <i class="bi bi-award me-2 text-primary-custom"></i> Qualidade desde 2018
+                    </div>
+                    <h1 class="hero-title">ELEGÂNCIA QUE FLORESCE EM CADA <span class="text-primary-custom">DETALHE</span></h1>
+                    <p class="lead mb-4">Há 5 anos realçando a beleza feminina com moda íntima e acessórios que combinam conforto, sofisticação e autenticidade.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#colecoes" class="btn btn-primary-custom btn-lg">Ver Coleções <i class="bi bi-arrow-right ms-1"></i></a>
+                        <a href="#produtos" class="btn btn-outline-dark btn-lg">Nossos Produtos <i class="bi bi-grid-3x3-gap ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="highlight-box position-relative">
+                        <div class="badge-new">COLEÇÃO PRIMAVERA</div>
+                        <h4 class="mb-3">Coleção "Florescer"</h4>
+                        <p class="mb-3">Roupas íntimas e acessórios com estampas florais e tecidos leves para a estação mais colorida do ano.</p>
+                        <h3 class="text-primary-custom">Até 25% OFF</h3>
+                        <p class="text-muted small">Na compra de 3 peças ou mais</p>
+                        <a href="#colecoes" class="btn btn-secondary-custom w-100">Conheça a Coleção</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre a Empresa -->
+    <section id="sobre" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-10 mx-auto text-center">
+                    <h2 class="section-title center">Sobre a Primavera Moda Íntima</h2>
+                    <p class="lead flower-decoration">Especializada em comércio de artigos do vestuário e acessórios desde 2018, celebrando a beleza e feminilidade em cada estação.</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <div class="fashion-icon">
+                            <i class="bi bi-building"></i>
+                        </div>
+                        <h4>Nossa História</h4>
+                        <p>A <strong>Primavera Moda Íntima e Acessórios LTDA</strong> foi fundada em <strong>18 de janeiro de 2018</strong> na vibrante cidade do <strong>Rio de Janeiro, RJ</strong>. Inspirada pela renovação da primavera, nascemos com o propósito de oferecer produtos que fazem cada mulher florescer em sua essência.</p>
+                        <a href="#contato" class="btn btn-primary-custom mt-2">Conheça Nossa História</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card">
+                        <div class="fashion-icon">
+                            <i class="bi bi-file-text"></i>
+                        </div>
+                        <h4>Dados Cadastrais</h4>
+                        <p><strong>CNPJ:</strong> 29.469.016/0001-20</p>
+                        <p><strong>Razão Social:</strong> Primavera Moda Íntima e Acessórios LTDA</p>
+                        <p><strong>Situação Cadastral:</strong> <span class="badge bg-success">Ativa</span></p>
+                        <p><strong>Atividade Principal:</strong> 47.81-4-00 - Comércio varejista de artigos do vestuário e acessórios.</p>
+                        <a href="#contato" class="btn btn-secondary-custom mt-2">Certificados de Qualidade</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Estatísticas -->
+            <div class="row mt-5">
+                <div class="col-12 text-center mb-5">
+                    <h3>Nossa Trajetória em Números</h3>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-box">
+                        <div class="stats-number">5+</div>
+                        <div class="stats-label">Anos de Experiência</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-box">
+                        <div class="stats-number">10.000+</div>
+                        <div class="stats-label">Peças Vendidas</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-box">
+                        <div class="stats-number">8+</div>
+                        <div class="stats-label">Coleções Lançadas</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stats-box">
+                        <div class="stats-number">98%</div>
+                        <div class="stats-label">Satisfação do Cliente</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner de Coleção -->
+    <div class="container">
+        <div class="collection-banner">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-3">Coleção Verão 2023 "Sol e Mar"</h2>
+                    <p class="lead mb-4">Tecidos leves, cores vibrantes e designs que celebram a beleza do verão carioca.</p>
+                    <a href="#colecoes" class="btn btn-light btn-lg">Explorar Coleção <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Coleções -->
+    <section id="colecoes" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title center">Nossas Coleções</h2>
+                    <p class="lead">Cada coleção é inspirada em uma estação ou tema especial, criada para realçar sua beleza natural.</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="highlight-box text-center">
+                        <div class="feature-icon">
+                            <i class="bi bi-flower1"></i>
+                        </div>
+                        <h4>Coleção Primavera</h4>
+                        <p>Estampas florais, cores suaves e tecidos leves que celebram o renascimento e a beleza natural.</p>
+                        <a href="#contato" class="btn btn-primary-custom mt-3">Ver Coleção</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="highlight-box text-center">
+                        <div class="feature-icon">
+                            <i class="bi bi-sun"></i>
+                        </div>
+                        <h4>Coleção Verão</h4>
+                        <p>Cores vibrantes, tecidos respiráveis e designs ousados para os dias mais quentes e ensolarados.</p>
+                        <a href="#contato" class="btn btn-primary-custom mt-3">Ver Coleção</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="highlight-box text-center">
+                        <div class="feature-icon">
+                            <i class="bi bi-moon-stars"></i>
+                        </div>
+                        <h4>Coleção Noite</h4>
+                        <p>Peças sofisticadas, tecidos nobres e designs elegantes para momentos especiais e românticos.</p>
+                        <a href="#contato" class="btn btn-primary-custom mt-3">Ver Coleção</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos -->
+    <section id="produtos" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title center">Nossos Produtos</h2>
+                    <p class="lead">Variedade, qualidade e estilo em cada peça que oferecemos.</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="product-category">
+                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Roupas Íntimas">
+                        <div class="overlay">
+                            <h3 class="mb-2">Roupas Íntimas</h3>
+                            <p class="mb-0">Conforto e elegância para o dia a dia</p>
+                            <a href="#" class="btn btn-sm btn-secondary-custom mt-3">Ver Produtos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-category">
+                        <img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pijamas">
+                        <div class="overlay">
+                            <h3 class="mb-2">Pijamas e Camisolas</h3>
+                            <p class="mb-0">Conforto para noites perfeitas de sono</p>
+                            <a href="#" class="btn btn-sm btn-secondary-custom mt-3">Ver Produtos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-category">
+                        <img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Acessórios">
+                        <div class="overlay">
+                            <h3 class="mb-2">Acessórios</h3>
+                            <p class="mb-0">Complementos para looks especiais</p>
+                            <a href="#" class="btn btn-sm btn-secondary-custom mt-3">Ver Produtos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-category">
+                        <img src="https://images.unsplash.com/photo-1585155912635-bb0e7bf36e98?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Body">
+                        <div class="overlay">
+                            <h3 class="mb-2">Body e Conjuntos</h3>
+                            <p class="mb-0">Praticidade e elegância combinadas</p>
+                            <a href="#" class="btn btn-sm btn-secondary-custom mt-3">Ver Produtos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-category">
+                        <img src="https://images.unsplash.com/photo-1525171254930-643fc658b64e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Meias">
+                        <div class="overlay">
+                            <h3 class="mb-2">Meias e Meias-calças</h3>
+                            <p class="mb-0">Conforto e estilo para os pés</p>
+                            <a href="#" class="btn btn-sm btn-secondary-custom mt-3">Ver Produtos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-category">
+                        <img src="https://images.unsplash.com/photo-1592878904946-b3cd8ae243d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Esportiva">
+                        <div class="overlay">
+                            <h3 class="mb-2">Moda Íntima Esportiva</h3>
+                            <p class="mb-0">Conforto e suporte para atividades físicas</p>
+                            <a href="#" class="btn btn-sm btn-secondary-custom mt-3">Ver Produtos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a href="#contato" class="btn btn-primary-custom btn-lg">Solicitar Catálogo Completo <i class="bi bi-arrow-right-circle ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section id="diferenciais" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title center">Por Que Escolher a Primavera?</h2>
+                    <p class="lead">Conheça os diferenciais que nos tornam referência em moda íntima e acessórios.</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center p-4">
+                        <div class="fashion-icon mx-auto">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <h5>Conforto Incomparável</h5>
+                        <p>Tecidos selecionados que proporcionam conforto durante todo o dia, sem abrir mão do estilo.</p>
+                        <a href="#contato" class="btn btn-sm btn-outline-primary-custom">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center p-4">
+                        <div class="fashion-icon mx-auto">
+                            <i class="bi bi-flower1"></i>
+                        </div>
+                        <h5>Design Exclusivo</h5>
+                        <p>Modelos desenvolvidos por nossa equipe de design, com estampas únicas e inspiradas na natureza.</p>
+                        <a href="#contato" class="btn btn-sm btn-outline-primary-custom">Conheça a Equipe</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center p-4">
+                        <div class="fashion-icon mx-auto">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h5>Qualidade Garantida</h5>
+                        <p>Controle rigoroso de qualidade em todas as etapas, desde a seleção de tecidos até o acabamento final.</p>
+                        <a href="#contato" class="btn btn-sm btn-outline-primary-custom">Certificações</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="text-center p-4">
+                        <div class="fashion-icon mx-auto">
+                            <i class="bi bi-truck"></i>
+                        </div>
+                        <h5>Entrega em Todo Brasil</h5>
+                        <p>Enviamos para todo o país com embalagem especial que preserva a qualidade dos produtos.</p>
+                        <a href="#contato" class="btn btn-sm btn-outline-primary-custom">Consultar Prazos</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="call-to-action rounded mt-5">
+                <div class="row align-items-center position-relative" style="z-index: 10;">
+                    <div class="col-lg-8">
+                        <h3 class="mb-3">GANHE 15% DE DESCONTO NA SUA PRIMEIRA COMPRA!</h3>
+                        <p class="mb-0">Cadastre-se para receber ofertas exclusivas e novidades das nossas coleções.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="#contato" class="btn btn-light btn-lg fw-bold">Quero Meu Desconto <i class="bi bi-gift ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title center">O Que Nossas Clientes Dizem</h2>
+                    <p class="lead">A satisfação de quem já experimentou a qualidade Primavera.</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "As roupas íntimas da Primavera são minhas preferidas! O conforto é incomparável e os designs são lindos. Sempre recebo elogios quando uso as peças."
+                        </div>
+                        <div class="testimonial-author">Camila Santos, 29 anos</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Compro há 3 anos e sempre fico impressionada com a qualidade. Os tecidos são macios, as costuras perfeitas e o caimento é excelente. Recomendo!"
+                        </div>
+                        <div class="testimonial-author">Juliana Oliveira, 35 anos</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Como revendedora, trabalho com várias marcas, mas a Primavera é a que mais vende. Minhas clientes amam as estampas florais e a qualidade dos produtos."
+                        </div>
+                        <div class="testimonial-author">Patrícia Lima, Revendedora</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title center">Entre em Contato</h2>
+                    <p class="lead">Estamos prontas para atender você com carinho e dedicação!</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-5">
+                    <h4 class="mb-4">Informações de Contato</h4>
+                    <ul class="list-unstyled contact-info">
+                        <li><i class="bi bi-geo-alt"></i> <strong>Localização:</strong> Rio de Janeiro, RJ - Brasil</li>
+                        <li><i class="bi bi-building"></i> <strong>CNPJ:</strong> 29.469.016/0001-20</li>
+                        <li><i class="bi bi-building"></i> <strong>Razão Social:</strong> Primavera Moda Íntima e Acessórios LTDA</li>
+                        <li><i class="bi bi-calendar-check"></i> <strong>Fundação:</strong> 18 de Janeiro de 2018</li>
+                        <li><i class="bi bi-check-circle"></i> <strong>Situação Cadastral:</strong> Ativa</li>
+                        <li><i class="bi bi-briefcase"></i> <strong>Atividade:</strong> Comércio varejista de artigos do vestuário e acessórios</li>
+                        <li><i class="bi bi-telephone"></i> <strong>Telefone:</strong> (21) 3333-3333</li>
+                        <li><i class="bi bi-whatsapp"></i> <strong>WhatsApp:</strong> (21) 99999-9999</li>
+                        <li><i class="bi bi-envelope"></i> <strong>E-mail:</strong> contato@primaveramodaintima.com.br</li>
+                    </ul>
+                    
+                    <div class="mt-4">
+                        <h5>Siga a Primavera</h5>
+                        <div class="d-flex gap-3">
+                            <a href="#" class="text-primary-custom fs-4"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="text-primary-custom fs-4"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="text-primary-custom fs-4"><i class="bi bi-pinterest"></i></a>
+                            <a href="#" class="text-primary-custom fs-4"><i class="bi bi-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="highlight-box">
+                        <h4 class="mb-4">Envie sua Mensagem</h4>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">Nome Completo *</label>
+                                <input type="text" class="form-control" id="nome" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail *</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefone" class="form-label">Telefone/WhatsApp *</label>
+                                <input type="tel" class="form-control" id="telefone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="assunto" class="form-label">Assunto *</label>
+                                <select class="form-select" id="assunto" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="orcamento">Solicitar Orçamento</option>
+                                    <option value="revenda">Interesse em Revenda</option>
+                                    <option value="produto">Informação sobre Produto</option>
+                                    <option value="duvida">Tirar Dúvida</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensagem" class="form-label">Mensagem *</label>
+                                <textarea class="form-control" id="mensagem" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary-custom btn-lg w-100">Enviar Mensagem <i class="bi bi-send ms-1"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="mb-3"><i class="bi bi-flower1 me-2"></i>Primavera Moda Íntima</h4>
+                    <p>Especializada em comércio de artigos do vestuário e acessórios desde 2018, celebrando a beleza feminina em todas as estações.</p>
+                    <a href="#inicio" class="btn btn-sm btn-outline-light mt-2">Voltar ao Topo <i class="bi bi-arrow-up ms-1"></i></a>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#inicio" class="text-light text-decoration-none">Início</a></li>
+                        <li class="mb-2"><a href="#sobre" class="text-light text-decoration-none">Sobre a Empresa</a></li>
+                        <li class="mb-2"><a href="#produtos" class="text-light text-decoration-none">Produtos</a></li>
+                        <li class="mb-2"><a href="#colecoes" class="text-light text-decoration-none">Coleções</a></li>
+                        <li class="mb-2"><a href="#diferenciais" class="text-light text-decoration-none">Diferenciais</a></li>
+                        <li class="mb-2"><a href="#contato" class="text-light text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">Informações Legais</h5>
+                    <p><strong>Primavera Moda Íntima e Acessórios LTDA</strong></p>
+                    <p>CNPJ: 29.469.016/0001-20</p>
+                    <p>Rio de Janeiro/RJ</p>
+                    <p>Atividade: 47.81-4-00 - Comércio varejista de artigos do vestuário e acessórios</p>
+                    <p>Fundada em: 18/01/2018</p>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2023 Primavera Moda Íntima - Primavera Moda Íntima e Acessórios LTDA. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Desenvolvido com <i class="bi bi-heart-fill text-primary-custom"></i> para mulheres que florescem a cada dia</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigada pelo seu contato! Em breve nossa equipe entrará em contato.');
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Adiciona mais flores decorativas aleatórias
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.querySelector('body');
+            for (let i = 0; i < 8; i++) {
+                const flower = document.createElement('div');
+                flower.className = 'spring-flower';
+                flower.innerHTML = '❀';
+                flower.style.top = Math.random() * 100 + '%';
+                flower.style.left = Math.random() * 100 + '%';
+                flower.style.fontSize = (Math.random() * 1 + 1) + 'rem';
+                flower.style.opacity = Math.random() * 0.5 + 0.3;
+                body.appendChild(flower);
+            }
+        });
+    </script>
+</body>
+</html>
